@@ -1,10 +1,8 @@
 import cv2
 from PIL import Image;
 
-im = Image.new(mode="L", size=(200, 200))
-im.show()
-
-
+# im = Image.new(mode="L", size=(200, 200))
+# im.show()
 
 img = cv2.imread('test1.jpg', 0)
 print(img)
