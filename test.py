@@ -1,14 +1,11 @@
 import cv2
 from PIL import Image;
 
-# im = Image.new(mode="L", size=(200, 200))
-# im.show()
+tup1 = (1, 2, 3, 4, 5)
+tup2 = 3
 
-img = cv2.imread('test1.jpg', 0)
-print(img)
+tup3 = tup1*tup2
 
-cv2.imwrite('test1_res.jpg', img)
-cv2.imshow('result', img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+for x in tup3:
+    print(x)
 
