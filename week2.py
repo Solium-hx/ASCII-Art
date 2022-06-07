@@ -24,12 +24,12 @@ elif bg == "white":
     bg_code = 0
 
 # Getting the character List, Font and Scaling characters for square Pixels
-char_list, font, scale = get_data("complex")
+(char_list, font, scale) = get_data("complex")
 num_chars = len(char_list)
 num_cols = 300
 
 # Reading Input Image
-img = cv2.imread("input_images/2_input1.jpg")
+img = cv2.imread("./input_images/2_input1.jpg")
 
 # Run to see the read input
 # cv2.imshow('inputAsRead', img)
@@ -47,7 +47,7 @@ img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 # Extracting height and width from Image
 height, width = img.shape
 
-# Defining height and width of each cell==pixel
+# Defining height and width of each cell/pixel
 cell_w = width/num_cols
 cell_h = scale*cell_w
 num_rows = int(height/cell_h)
@@ -58,7 +58,7 @@ out_width = char_width*num_cols
 out_height = scale*char_height*num_rows
 
 # Making a new Image using PIL
-out_img = Image.new(mode="L", size=(out_width, out_height), color=bg_code)
+out_img = Image.new("L", (out_width, out_height), bg_code)
 draw = ImageDraw.Draw(out_img)
 
 # Run to open a window of the created blank image
