@@ -62,9 +62,9 @@ pip install Pillow
 - Image manipulations
 
 ## To Dos
--[ ] Improve GUI
--[ ] Multiple font option for ASCII Art option
--[ ] Custom character set for ASCII Art option
+- [ ] Improve GUI
+- [x] Multiple font options for ASCII Art transformation
+- [x] Multiple character sets for ASCII Art transformation
 
 ## Resources/References
 - stackoverflow
