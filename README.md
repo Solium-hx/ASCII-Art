@@ -4,7 +4,7 @@
 This is an image transformation tool that gives the user the option to convert any image to a pencil sketch of that image or the ASCII art version of it.
 
 ## Requirements
-- Python3 and pip
+- Python3
 - NumPy
 ```bash
 pip install numpy
