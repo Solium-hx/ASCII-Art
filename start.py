@@ -1,10 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
-import ascify
-import sketchify
-import blockify
-import cv2
+import ascify, sketchify, blockify
 
 ascii_image_set = False
 pencilsketch_image_set = False
@@ -77,11 +74,12 @@ def magic_block():
 def upload():
     global image
     global inp_filename
-    global ascii_image_set, pencilsketch_image_set
+    global ascii_image_set, pencilsketch_image_set, pixel_image_set
     global h, w
 
     ascii_image_set = False
     pencilsketch_image_set = False
+    pixel_image_set = False
 
     f_types = [('All Files', '*'), ('Jpg Files', '*.jpg'), ('Png Files', '*.png')]
     inp_filename = filedialog.askopenfilename(filetypes=f_types)
@@ -135,6 +133,6 @@ btn_upload.grid(row=1,column=0)
 btn_ascii = tk.Button(master=window, text="to ASCII Art", command=magic_letter)
 btn_sketch = tk.Button(master=window, text="to Pencil Sketch", command=magic_pencil)
 btn_pixel = tk.Button(master=window, text="to Pixel Art", command=magic_block)
-btn_save = tk.Button(master=window, text="Save", command=save_img)
+btn_save = tk.Button(master=window, text="Save This Image", command=save_img)
 
 window.mainloop()
