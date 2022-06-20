@@ -19,13 +19,16 @@ pip install Pillow
 ```
 
 ## How to Run
-1. Complete all the requirements.
-2. Make sure the files start.py, ascify.py, sketchify.py, blockify.py and the folder fonts is in the same folder.
+### Follow These steps
+1. Make sure all the requirements are complete.
+2. Make sure the files start.py, ascify.py, sketchify.py, blockify.py and the folder fonts is in the same directory.
 3. Run the start.py python script.
 4. On the new window that just opened, click the 'Upload Image' button.
 5. Select the desired image you wish to transform.
 6. Select the transformation type you want.
-7. To save the transformed image, click on the 'Save' button, go to the desired location and save the image.
+7. To save the transformed image, click on the 'Save' button, go to the desired location and save the image.!
+
+### Video Demo
 
 ## Workings
 
