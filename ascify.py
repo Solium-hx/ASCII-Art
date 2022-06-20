@@ -4,27 +4,22 @@ from PIL import Image, ImageDraw, ImageOps, ImageFont
 import os
 
 Character = {
-    "standard": "@%#*+=-:. ",
-    "complex": "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
+    "standard"  : "@%#*+=-:. ",
+    "complex"   : "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
 }
 
 def get_data(mode):
-    font = ImageFont.truetype(os.path.dirname(__file__) + "/fonts/DejaVuSansMono.ttf", size=20)
-    scale = 2
+    font_filename = "DejaVuSansMono"
+    font = ImageFont.truetype(os.path.dirname(__file__) + "/fonts/" + font_filename + ".ttf", size=20)
     char_list = Character[mode]
-    return char_list, font, scale
+    return char_list, font
 
 def convert(img_loc):
 
-    bg = "black"
-    if bg == "black":
-        bg_code = (255,255,255)
-    elif bg == "white":
-        bg_code = (0,0,0)
-
-    (char_list, font, scale) = get_data("complex")
+    (char_list, font) = get_data("complex")
     num_chars = len(char_list)
     num_cols = 300
+    scale = 2
     
     image = cv2.imread(img_loc)
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
@@ -39,7 +34,7 @@ def convert(img_loc):
     out_width = char_width*num_cols
     out_height = char_height*num_rows
 
-    out_img = Image.new("RGB", (out_width, out_height), bg_code)
+    out_img = Image.new("RGB", (out_width, out_height), (255,255,255))
     draw = ImageDraw.Draw(out_img)
 
     for i in range(int(num_rows)):
@@ -55,10 +50,7 @@ def convert(img_loc):
             
             draw.text((j*char_width, i*char_height), c, fill = partial_avg_color, font = font)
 
-    if bg == "white":
-        cropped_img = ImageOps.invert(out_img).getbbox()
-    elif bg == "black":
-        cropped_img = out_img.getbbox()
+    cropped_img = out_img.getbbox()
 
     f_img = out_img.crop(cropped_img)
 
