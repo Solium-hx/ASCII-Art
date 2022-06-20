@@ -3,6 +3,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 
 def convert(img_loc):
+
     image = cv2.imread(img_loc)
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     height, width, garbage = image.shape
@@ -32,4 +33,5 @@ def convert(img_loc):
 
     cropped_img = out_img.getbbox()
     f_img = out_img.crop(cropped_img)
+
     return f_img
