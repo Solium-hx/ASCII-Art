@@ -37,8 +37,10 @@ def convert(img_loc):
     out_img = Image.new("RGB", (out_width, out_height), (255,255,255))
     draw = ImageDraw.Draw(out_img)
 
+
     for i in range(int(num_rows)):
         for j in range(int(num_cols)):
+
             partial_image = image[  int(i*cell_h)   :   min(int((i+1)*cell_h), height),
                                     int(j*cell_w)   :   min(int((j+1)*cell_w), width),
                                                     :                                   ]
@@ -50,8 +52,8 @@ def convert(img_loc):
             
             draw.text((j*char_width, i*char_height), c, fill = partial_avg_color, font = font)
 
-    cropped_img = out_img.getbbox()
 
+    cropped_img = out_img.getbbox()
     f_img = out_img.crop(cropped_img)
 
     return f_img

@@ -4,13 +4,12 @@ from PIL import Image, ImageTk
 import ascify, sketchify, blockify
 
 ascii_image_set = False
-pencilsketch_image_set = False
+sketch_image_set = False
 pixel_image_set = False
 
 def magic_letter():
     global f_img
-    global ascii_image, ascii_image_set
-    global ascii_img_disp
+    global ascii_image, ascii_image_set, ascii_img_disp
     global h, w
 
     if ascii_image_set:
@@ -30,17 +29,16 @@ def magic_letter():
 
 def magic_pencil():
     global f_img
-    global pencilsketch_image, pencilsketch_image_set
-    global sketch_image_display
+    global pencil_sketch_image, sketch_image_set, sketch_image_display
     global h, w
 
-    if pencilsketch_image_set:
-        f_img = pencilsketch_image
+    if sketch_image_set:
+        f_img = pencil_sketch_image
     else:
         sk_img = sketchify.convert(img_loc=inp_filename)
         f_img = Image.fromarray(sk_img)
-        pencilsketch_image = f_img
-        pencilsketch_image_set = True
+        pencil_sketch_image = f_img
+        sketch_image_set = True
     
     out_img = f_img.resize((w, h), Image.Resampling.LANCZOS)
     sketch_image_display = ImageTk.PhotoImage(image=out_img)
@@ -52,8 +50,7 @@ def magic_pencil():
 
 def magic_block():
     global f_img
-    global pixel_image, pixel_image_set
-    global pixel_img_disp
+    global pixel_image, pixel_image_set, pixel_img_disp
     global h, w
 
     if pixel_image_set:
@@ -74,11 +71,11 @@ def magic_block():
 def upload():
     global image
     global inp_filename
-    global ascii_image_set, pencilsketch_image_set, pixel_image_set
+    global ascii_image_set, sketch_image_set, pixel_image_set
     global h, w
 
     ascii_image_set = False
-    pencilsketch_image_set = False
+    sketch_image_set = False
     pixel_image_set = False
 
     f_types = [('All Files', '*'), ('Jpg Files', '*.jpg'), ('Png Files', '*.png')]
