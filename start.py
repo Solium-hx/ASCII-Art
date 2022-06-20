@@ -81,7 +81,7 @@ def upload():
     pencilsketch_image_set = False
     pixel_image_set = False
 
-    f_types = [('All Files', '*'), ('Jpg Files', '*.jpg'), ('Png Files', '*.png')]
+    f_types = [('All Files', '*'), ('Jpg Files', '*.jpg')]
     inp_filename = filedialog.askopenfilename(filetypes=f_types)
     
     inp_img = Image.open(inp_filename)
