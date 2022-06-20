@@ -132,6 +132,6 @@ btn_upload.grid(row=1,column=0)
 btn_ascii = tk.Button(master=window, text="to ASCII Art", command=magic_letter)
 btn_sketch = tk.Button(master=window, text="to Pencil Sketch", command=magic_pencil)
 btn_pixel = tk.Button(master=window, text="to Pixel Art", command=magic_block)
-btn_save = tk.Button(master=window, text="Save", command=save_img)
+btn_save = tk.Button(master=window, text="Save This Image", command=save_img)
 
 window.mainloop()
