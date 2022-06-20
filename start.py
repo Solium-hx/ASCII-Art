@@ -1,10 +1,7 @@
 import tkinter as tk
 from tkinter import filedialog
 from PIL import Image, ImageTk
-import ascify
-import sketchify
-import blockify
-import cv2
+import ascify, sketchify, blockify
 
 ascii_image_set = False
 pencilsketch_image_set = False

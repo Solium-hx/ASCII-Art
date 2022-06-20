@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from PIL import Image, ImageDraw, ImageOps, ImageFont
+import os
 
 Character = {
     "standard": "@%#*+=-:. ",
@@ -8,22 +9,22 @@ Character = {
 }
 
 def get_data(mode):
-    font = ImageFont.truetype("./fonts/DejaVuSansMono.ttf", size=20)
+    font = ImageFont.truetype(os.path.dirname(__file__) + "/fonts/DejaVuSansMono.ttf", size=20)
     scale = 2
     char_list = Character[mode]
     return char_list, font, scale
 
-bg = "black"
-if bg == "black":
-    bg_code = (255,255,255)
-elif bg == "white":
-    bg_code = (0,0,0)
-
-(char_list, font, scale) = get_data("complex")
-num_chars = len(char_list)
-num_cols = 300
-
 def convert(img_loc):
+
+    bg = "black"
+    if bg == "black":
+        bg_code = (255,255,255)
+    elif bg == "white":
+        bg_code = (0,0,0)
+
+    (char_list, font, scale) = get_data("complex")
+    num_chars = len(char_list)
+    num_cols = 300
     
     image = cv2.imread(img_loc)
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
