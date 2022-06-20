@@ -3,13 +3,14 @@ from tkinter import filedialog
 from PIL import Image, ImageTk
 import ascify
 import sketchify
-import numpy as np
+import blockify
 import cv2
 
 ascii_image_set = False
 pencilsketch_image_set = False
+pixel_image_set = False
 
-def magic_ascii():
+def magic_letter():
     global f_img
     global ascii_image, ascii_image_set
     global ascii_img_disp
@@ -52,6 +53,27 @@ def magic_pencil():
     btn_save.grid(row=3, column=1, sticky="nsew")
 
 
+def magic_block():
+    global f_img
+    global pixel_image, pixel_image_set
+    global pixel_img_disp
+    global h, w
+
+    if pixel_image_set:
+        f_img = pixel_image
+    else:
+        f_img = blockify.convert(img_loc=inp_filename)
+        pixel_image = f_img
+        pixel_image_set = True
+
+    out_img = f_img.resize((w, h), Image.Resampling.LANCZOS)
+    pixel_img_disp = ImageTk.PhotoImage(image=out_img)
+    
+    lbl_out_img.configure(image=pixel_img_disp)
+    lbl_out_img.grid(row=2, column=1, sticky="nsew")
+    btn_save.grid(row=3, column=1, sticky="nsew")
+
+
 def upload():
     global image
     global inp_filename
@@ -81,8 +103,9 @@ def upload():
     image = ImageTk.PhotoImage(image=inp_img)
     lbl_inp_img.configure(image=image)
     lbl_inp_img.grid(row=2,column=0, sticky="nsew")
-    btn_ascii.grid(row=3, column=0, sticky="nsew")
-    btn_sketch.grid(row=4, column=0, sticky="nsew")
+    btn_sketch.grid(row=3, column=0, sticky="nsew")
+    btn_ascii.grid(row=4, column=0, sticky="nsew")
+    btn_pixel.grid(row=5, column=0, sticky="nsew")
 
 
 def save_img():
@@ -109,8 +132,9 @@ lbl_out_img = tk.Label(master=window)
 btn_upload = tk.Button(master=window, text="Upload Image", command=upload)
 btn_upload.grid(row=1,column=0)
 
-btn_ascii = tk.Button(master=window, text="ASCIFY", command=magic_ascii)
-btn_sketch = tk.Button(master=window, text="SKETCHIFY", command=magic_pencil)
+btn_ascii = tk.Button(master=window, text="to ASCII Art", command=magic_letter)
+btn_sketch = tk.Button(master=window, text="to Pencil Sketch", command=magic_pencil)
+btn_pixel = tk.Button(master=window, text="to Pixel Art", command=magic_block)
 btn_save = tk.Button(master=window, text="Save", command=save_img)
 
 window.mainloop()
