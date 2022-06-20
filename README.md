@@ -19,7 +19,7 @@ pip install Pillow
 ```
 
 ## How to Run
-1. Get all the requirements.
+1. Complete all the requirements.
 2. Make sure the files start.py, ascify.py, sketchify.py, blockify.py and the folder fonts is in the same folder.
 3. Run the start.py python script.
 4. On the new window that just opened, click the 'Upload Image' button.
