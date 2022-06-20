@@ -74,11 +74,12 @@ def magic_block():
 def upload():
     global image
     global inp_filename
-    global ascii_image_set, pencilsketch_image_set
+    global ascii_image_set, pencilsketch_image_set, pixel_image_set
     global h, w
 
     ascii_image_set = False
     pencilsketch_image_set = False
+    pixel_image_set = False
 
     f_types = [('All Files', '*'), ('Jpg Files', '*.jpg'), ('Png Files', '*.png')]
     inp_filename = filedialog.askopenfilename(filetypes=f_types)
