@@ -52,7 +52,7 @@ pip install Pillow
 - Very similar to ascify.py
 - The size of each pixel square block is taken to be 10
 - A blank image is created which will later be filled with colored blocks.
-- For each block, the BGR value is averaged out, then using the PIL.ImageDraw.rectangle() method from Pillow, the block is filled with this color at the correct (x,y) block.
+- For each block, the BGR value is averaged out, then using the PIL.ImageDraw.rectangle() method from Pillow, the block is filled with this color at the correct block.
 
 ## Learnings
 - How images are stored.
