@@ -1,25 +1,22 @@
-# ASCII-Art Project
+# ASCII_Art Project
 # Image Transformation Tool
 
 This is an image transformation tool that gives the user the option to convert any image to a pencil sketch of that image or the ASCII art version of it.
 
 ## Requirements
-- Numpy
+- Python3 and pip
+- NumPy
 ```bash
 pip install numpy
 ```
-
 - OpenCV
 ```bash
 pip install opencv-python
 ```
-
 - Pillow
 ```bash
 pip install Pillow
 ```
-
-- Tkinter
 
 ## How to Run
 1. Get all the requirements.
@@ -63,8 +60,8 @@ pip install Pillow
 
 ## To Dos
 - [ ] Improve GUI
-- [x] Multiple font options for ASCII Art transformation
-- [x] Multiple character sets for ASCII Art transformation
+- [ ] Multiple font options for ASCII Art transformation
+- [ ] Multiple character sets for ASCII Art transformation
 
 ## Resources/References
 - stackoverflow
