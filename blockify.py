@@ -8,7 +8,7 @@ def convert(img_loc):
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
 
     height, width, garbage = image.shape
-    length = 10
+    length = 7
 
     num_cols = int(width/length)
     num_rows = int(height/length)
