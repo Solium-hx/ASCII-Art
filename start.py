@@ -92,7 +92,6 @@ def upload():
         s = w/700
         w = int(w/s)
         h = int(h/s)
-
     inp_img = inp_img.resize((w, h), Image.Resampling.LANCZOS)
     
     image = ImageTk.PhotoImage(image=inp_img)
