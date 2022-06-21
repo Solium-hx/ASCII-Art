@@ -61,16 +61,19 @@ https://user-images.githubusercontent.com/103517557/174804301-229c63ea-5ea8-4b9e
 - For each block, the BGR value is averaged out, then using the PIL.ImageDraw.rectangle() method from Pillow, the block is filled with this color at the correct block.
 
 ## Learnings
-- How images are stored.
-- Image manipulations
+- How images are stored in a computer and how to get their properties.
+- Image manipulations using OpenCV and Pillow.
+- How to use tkinter to provide GUI in python.
 
 ## To Dos
-- [ ] Improve GUI
+- [ ] Improve UI
 - [ ] Multiple font options for ASCII Art transformation
 - [ ] Multiple character sets for ASCII Art transformation
+- [ ] Custom character sets for ASCII Art transformation
 
 ## Resources/References
-- stackoverflow
-- geeksforgeeks
-- delftshaft
-- pillow documentation
+- stackoverflow  - getting reasons for errors and their solution
+- geeksforgeeks  - parameters of different functions and their return values
+- delftshaft     - general ways to achieve a result
+- pillow documentation     - https://pillow.readthedocs.io/en/stable/reference/Image.html
+- realpython (for tkinter) - realpython.com/python-gui-tkinter/
