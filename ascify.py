@@ -3,7 +3,7 @@ import numpy as np
 from PIL import Image, ImageDraw, ImageOps, ImageFont
 import os
 
-Character = {
+Characters = {
     "standard"  : "@%#*+=-:. ",
     "complex"   : "$@B%8&WM#*oahkbdpqwmZO0QLCJUYXzcvunxrjft/\|()1{}[]?-_+~<>i!lI;:,\"^`'. "
 }
@@ -11,7 +11,7 @@ Character = {
 def get_data(mode):
     font_filename = "DejaVuSansMono"
     font = ImageFont.truetype(os.path.dirname(__file__) + "/fonts/" + font_filename + ".ttf", size=20)
-    char_list = Character[mode]
+    char_list = Characters[mode]
     return char_list, font
 
 def convert(img_loc):
