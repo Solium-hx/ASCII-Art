@@ -30,6 +30,9 @@ pip install Pillow
 
 ### Video Demo
 
+https://user-images.githubusercontent.com/103517557/174804301-229c63ea-5ea8-4b9e-8035-766724576edf.mp4
+
+
 ## Workings
 
 ### start.py - Provides GUI using tkinter
