@@ -72,8 +72,8 @@ https://user-images.githubusercontent.com/103517557/174804301-229c63ea-5ea8-4b9e
 - [ ] Custom character sets for ASCII Art transformation
 
 ## Resources/References
-- stackoverflow            - getting reasons for errors and their solution
-- geeksforgeeks            - parameters of different functions and their return values
-- delftshaft               - general ways to achieve a result
+- stackoverflow            - helped in getting reasons for errors and their solution
+- geeksforgeeks            - helped in finding out parameters of different functions and their return values
+- delftshaft               - helped in getting general methods used to achieve a result.
 - pillow documentation     - https://pillow.readthedocs.io/en/stable/reference/Image.html
 - realpython (for tkinter) - https://realpython.com/python-gui-tkinter/
